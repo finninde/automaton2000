@@ -11,7 +11,7 @@ void setup() {
 }
 
 void loop() {
-    if (buttonState != digitalRead(INPIN) {
+    if (buttonState != digitalRead(INPIN)) {
         buttonState = digitalRead(INPIN);
         Serial.print(buttonState);
     }
