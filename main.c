@@ -1,15 +1,20 @@
 #define LEDPIN 13
 #define INPIN 7
 
+bool buttonState;
+
 void setup() { 
     pinMode(LEDPIN, OUTPUT); // built in LED
-    pinMode(INPIN, INPUT_PULLUP); // pullDown switch
+    pinMode(INPIN, INPUT_PULLUP); // pullUp switch
     Serial.begin(9600);  // 9600 bps
-    Serial.println("Hello world!");
+    buttonState = digitalRead(INPIN);
 }
 
-void loop(){
-    bool buttonState = digitalRead(INPIN);
-    digitalWrite(LEDPIN, buttonState);
+void loop() {
+    if (buttonState != digitalRead(INPIN) {
+        buttonState = digitalRead(INPIN);
+        Serial.print(buttonState);
+    }
+    digitalWrite(LEDPIN, buttonState); // debug LED
 }
 
